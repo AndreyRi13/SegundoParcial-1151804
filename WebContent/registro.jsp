@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-label-group">
                   <textarea id="inputDescripcion" class="form-control" placeholder="Descripcion" required autofocus></textarea>
-                  <label for="inputDescripcion">DescripciÃ³n</label>
+                  <label for="inputDescripcion">Descripción</label>
                 </div>
                 <div class="form-label-group">
                   <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
