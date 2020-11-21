@@ -5,7 +5,13 @@
 <%@page import="ufps.edu.co.entity.Servicio"%>
 <%
 String tiendaid=request.getParameter("tiendaid");
-Tienda tienda=new TiendaDao().find(tiendaid);
+TiendaDao tdao=new TiendaDao();
+Tienda d=null;
+for(Tienda tienda:tdao.list()){
+	if(tienda.getId()==Integer.parseInt(tiendaid)){
+	d=tienda;	
+	}
+}
 List<Servicio> servicios=new ServicioDao().list();
 %>
 
@@ -25,12 +31,12 @@ List<Servicio> servicios=new ServicioDao().list();
 
 <section id="team" class="pb-5">
   <div class="container">
-  <h5 class="section-title h1">SERVICIOS DE <%=tienda.getNombre()%></h5>
+  <h5 class="section-title h1">SERVICIOS DE <%=d.getNombre()%></h5>
 
 
   <div class="row">
 <%for(Servicio s:servicios){ 
-	if(s.getTiendaBean().getId()==Integer.parseInt(tiendaid)){
+	if(s.getTiendaBean().getId()==d.getId()){
 %>
     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
       <div class="card h-100">

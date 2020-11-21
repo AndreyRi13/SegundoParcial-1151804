@@ -37,9 +37,9 @@ public class ClienteServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		//response.getWriter().append("Hola mama"+action).append(request.getContextPath());
 		switch(action) {
-		case "login": request.getRequestDispatcher("vistas/login.jsp").forward(request, response);
+		case "login": request.getRequestDispatcher("login.jsp").forward(request, response);
 			break;
-		case "registro": request.getRequestDispatcher("vistas/registro.jsp").forward(request, response);
+		case "registro": request.getRequestDispatcher("registro.jsp").forward(request, response);
 		break;
 		}
 		
@@ -59,7 +59,7 @@ public class ClienteServlet extends HttpServlet {
 			List<ufps.edu.co.entity.Cliente> lista=cliented.list();
 			for(ufps.edu.co.entity.Cliente c:lista) {
 				if(c.getEmail().equals(email) && c.getClave().equals(password)) {
-					request.getRequestDispatcher("/Servicios?userid="+c.getId()).forward(request, response);
+					request.getRequestDispatcher("/ServiciosServlet?userid="+c.getId()).forward(request, response);
 				}
 			}
 		break;

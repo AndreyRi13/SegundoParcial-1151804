@@ -41,7 +41,7 @@ public class ServiciosServlet extends HttpServlet {
 		for(SeguirPK sp: lista) {
 			if(sp.getCliente()==Integer.parseInt(userid)) {
 				TiendaDao t=new TiendaDao();
-				request.getRequestDispatcher("vistas/servicios.jsp?tiendaid="+t.find(sp.getTienda()).getId()).forward(request, response);
+				request.getRequestDispatcher("servicios.jsp?tiendaid="+t.find(sp.getTienda()).getId()).forward(request, response);
 			}
 		}
 	}
