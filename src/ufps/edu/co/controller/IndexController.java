@@ -1,4 +1,4 @@
-package ufps.edu.co.controller;
+package co.rene.tienda.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,22 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ufps.edu.co.dao.SeguirPKDao;
-import ufps.edu.co.dao.TiendaDao;
-import ufps.edu.co.entity.Seguir;
-import ufps.edu.co.entity.SeguirPK;
+import co.rene.tienda.dao.TiendaDao;
+import co.rene.tienda.model.Tienda;
 
 /**
- * Servlet implementation class Servicios
+ * Servlet implementation class IndexController
  */
-@WebServlet("/Servicios/*")
-public class ServiciosServlet extends HttpServlet {
+@WebServlet("/")
+public class IndexController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private TiendaDao tiendaDao = new TiendaDao();   
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServiciosServlet() {
+    public IndexController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +31,10 @@ public class ServiciosServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String userid=request.getParameter("userid");
-		SeguirPKDao seguir = new SeguirPKDao();
-		List<SeguirPK> lista = seguir.list();
-		for(SeguirPK sp: lista) {
-			if(sp.getCliente()==Integer.parseInt(userid)) {
-				TiendaDao t=new TiendaDao();
-				request.getRequestDispatcher("servicios.jsp?tiendaid="+t.find(sp.getTienda()).getId()).forward(request, response);
-			}
-		}
+		String path = request.getServletPath();
+		List <Tienda> tiendas = tiendaDao.list();;
+		request.getSession().setAttribute("tiendas", tiendas);	
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
