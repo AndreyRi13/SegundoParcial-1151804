@@ -1,4 +1,4 @@
-package co.rene.tienda.controller;
+package ufps.edu.co.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.rene.tienda.dao.TiendaDao;
-import co.rene.tienda.model.Tienda;
+import ufps.edu.co.dao.TiendaDao;
+import ufps.edu.co.entity.Tienda;
 
 /**
  * Servlet implementation class IndexController

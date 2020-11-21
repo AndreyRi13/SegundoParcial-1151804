@@ -1,4 +1,4 @@
-package co.rene.tienda.controller;
+package ufps.edu.co.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.rene.tienda.dao.ClienteDao;
-import co.rene.tienda.dao.TiendaDao;
-import co.rene.tienda.model.Cliente;
-import co.rene.tienda.model.Tienda;
+import ufps.edu.co.dao.ClienteDao;
+import ufps.edu.co.dao.TiendaDao;
+import ufps.edu.co.entity.Cliente;
+import ufps.edu.co.entity.Tienda;
 
 /**
  * Servlet implementation class LoginController
