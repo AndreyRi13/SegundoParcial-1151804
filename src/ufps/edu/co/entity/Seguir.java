@@ -27,4 +27,12 @@ public class Seguir implements Serializable {
 		this.id = id;
 	}
 
+	public Seguir(SeguirPK id) {
+		super();
+		this.id = id;
+	}
+
+
+	
+	
 }

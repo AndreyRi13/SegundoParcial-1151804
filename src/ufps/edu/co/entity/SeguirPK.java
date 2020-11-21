@@ -54,4 +54,11 @@ public class SeguirPK implements Serializable {
 		
 		return hash;
 	}
+	public SeguirPK(int cliente, int tienda) {
+		super();
+		this.cliente = cliente;
+		this.tienda = tienda;
+	}
+	
+	
 }

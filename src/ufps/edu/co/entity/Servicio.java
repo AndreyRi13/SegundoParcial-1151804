@@ -61,4 +61,20 @@ public class Servicio implements Serializable {
 		this.tiendaBean = tiendaBean;
 	}
 
+	public Servicio(int id, String descripcion, String nombre, Tienda tiendaBean) {
+		super();
+		this.id = id;
+		this.descripcion = descripcion;
+		this.nombre = nombre;
+		this.tiendaBean = tiendaBean;
+	}
+	public Servicio( String descripcion, String nombre, Tienda tiendaBean) {
+		super();
+		
+		this.descripcion = descripcion;
+		this.nombre = nombre;
+		this.tiendaBean = tiendaBean;
+	}	
+	
+
 }

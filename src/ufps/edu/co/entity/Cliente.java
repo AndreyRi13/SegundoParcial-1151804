@@ -70,4 +70,24 @@ public class Cliente implements Serializable {
 		this.tiendas = tiendas;
 	}
 
+	public Cliente(int id, String clave, String email, String nombre, List<Tienda> tiendas) {
+		super();
+		this.id = id;
+		this.clave = clave;
+		this.email = email;
+		this.nombre = nombre;
+		this.tiendas = tiendas;
+	}
+	
+	public Cliente( String clave, String email, String nombre, List<Tienda> tiendas) {
+		super();
+		
+		this.clave = clave;
+		this.email = email;
+		this.nombre = nombre;
+		this.tiendas = tiendas;
+	}
+	
+	
+
 }
